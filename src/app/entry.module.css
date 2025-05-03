@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.entry {
+.entry, .interface {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,4 +34,14 @@
   width: 8rem;
   border: none;
   border-radius: 10px;
+}
+
+.imageGrid {
+  display: flex;
+  gap: 1rem;
+}
+
+.image img {
+  width: 5rem;
+  height: 5rem;
 }
