@@ -1,3 +1,3 @@
-import photo from './bolivia.jpg';
+import photoExample from './bolivia.jpg';
 
-export { photo };
+export { photoExample };
