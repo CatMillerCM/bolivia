@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { photoExample } from '@/assets';
+import { Buttons } from '@/components/molecules/buttons';
 import styles from './entry.module.css';
 
 const Entry = ({ setEntry, setPlayerMode }) => {
@@ -22,10 +23,12 @@ const Entry = ({ setEntry, setPlayerMode }) => {
         <Image src={photoExample} alt="Lorum Ipsum" />
       </div>
       <p>Maybe some instruction for buttons</p>
-      <div className={styles.buttons}>
-        <button className={styles.button} onClick={handleSingle}>Single</button>
-        <button className={styles.button} onClick={handleDouble}>Double</button>
-      </div>
+      <Buttons
+        firstOnClick={handleSingle}
+        secondOnClick={handleDouble}
+        firstLabel="Single"
+        secondLabel="Double"
+      />
     </div>
   )
 };

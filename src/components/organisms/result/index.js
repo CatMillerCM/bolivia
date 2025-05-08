@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { photoExample } from '@/assets';
 import styles from './result.module.css';
+import { Buttons } from '@/components/molecules/buttons';
 
 const Result = ({ setResultImage, setEntry }) => {
   const handleShareImage = () => {
@@ -16,10 +17,12 @@ const Result = ({ setResultImage, setEntry }) => {
   return (
     <div className={styles.resultPage}>
       <Image className={styles.resultPhoto} src={photoExample} alt="photo"/>
-      <div className={styles.buttons}>
-        <button className={styles.button} onClick={handleShareImage}>Share Image</button>
-        <button className={styles.button} onClick={handleStartAgain}>Try Another</button>
-      </div>
+      <Buttons
+        firstOnClick={handleShareImage}
+        secondOnClick={handleStartAgain}
+        firstLabel="Share Image"
+        secondLabel="Try Another"
+      />
     </div>
   )
 };

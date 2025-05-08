@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
+import { Button } from '@/components/atoms/button';
 import { photoTemplates } from '@/data';
 import styles from './templates.module.css';
 
@@ -19,6 +20,7 @@ const Templates = ({ selectedTemplate, setSelectedTemplate, playerMode, setPlaye
     setPhoto('here is the photo');
   };
 
+  // to do - disable camera open button untl template chosen
   return (
     <div className={styles.templates}>
     <h2>{playerMode} PLAYERMODE</h2>
@@ -34,7 +36,7 @@ const Templates = ({ selectedTemplate, setSelectedTemplate, playerMode, setPlaye
     </div>
     <p>Time to take your photo for {selectedTemplate}</p>
     <p>Ensure you keep your face in the shown outline and strike your best SCARED face!</p>
-    <button className={styles.button} onClick={handleCameraOpen}>Take Photo</button>
+    <Button onClick={handleCameraOpen} label="Take Photo"/>
   </div>
   )
 };

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Buttons } from '@/components/molecules/buttons';
 import styles from './photo.module.css';
 
 const Photo = ({ setPlayerMode, setPhoto, setIsLoadingResult, selectedTemplate, setResultImage }) => {
@@ -22,10 +23,12 @@ const Photo = ({ setPlayerMode, setPhoto, setIsLoadingResult, selectedTemplate, 
   return (
     <div className={styles.photoPage}>
     <p>Here is the photo</p>
-    <div className={styles.buttons}>
-      <button className={styles.button} onClick={handleUsePhoto}>I`m happy with it!</button>
-      <button className={styles.button} onClick={handleCameraOpen}>Retake Please!</button>
-    </div>
+    <Buttons
+      firstOnClick={handleUsePhoto}
+      secondOnClick={handleCameraOpen}
+      firstLabel="I`m happy with it!"
+      secondLabel="Retake Please!"
+    />
   </div>
   )
 };
