@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Button } from '../button';
 
-const PhotoButton = ({ setPlayerMode, setCameraOn, setStream, videoRef }) => {
+const PhotoButton = ({ setPlayerMode, setCameraOn, setStream, videoRef, label }) => {
   const handleCameraOpen = async () => {
     setPlayerMode(false);
     setCameraOn(true);
@@ -21,7 +21,7 @@ const PhotoButton = ({ setPlayerMode, setCameraOn, setStream, videoRef }) => {
 
   return (
     <div>
-      <Button onClick={handleCameraOpen} label="Take Photo" />
+      <Button onClick={handleCameraOpen} label={label ?? "Take Photo"} />
     </div>
   )
 };
@@ -30,7 +30,8 @@ PhotoButton.propTypes = {
   setPlayerMode: PropTypes.func.isRequired,
   setCameraOn: PropTypes.func.isRequired,
   setStream: PropTypes.func.isRequired,
-  videoRef: PropTypes.object.isRequired
+  videoRef: PropTypes.object.isRequired,
+  label: PropTypes.string
 };
 
 export { PhotoButton };

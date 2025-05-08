@@ -2,3 +2,9 @@
   position: relative !important;
   margin-bottom: 1rem;
 }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
