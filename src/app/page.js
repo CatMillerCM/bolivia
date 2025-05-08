@@ -1,21 +1,24 @@
 'use client';
 
-import Image from 'next/image';
-import { useState } from 'react';
-import { photoExample } from '@/assets';
-import styles from './page.module.css';
+import { useState, useRef } from 'react';
 import { Entry } from '@/components/organisms/entry';
 import { Templates } from '@/components/organisms/templates';
 import { Photo } from '@/components/organisms/photo';
 import { Result } from '@/components/organisms/result';
+import { Camera } from '@/components/organisms/camera';
+import styles from './page.module.css';
 
 const Page = () => {
   const [entry, setEntry] = useState(true);
   const [playerMode, setPlayerMode] = useState(null);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [cameraOn, setCameraOn] = useState(false);
+  const [stream, setStream] = useState(false);
   const [photo, setPhoto] = useState(null);
   const [isLoadingResult, setIsLoadingResult] = useState(false);
   const [resultImage, setResultImage] = useState(null);
+
+  const videoRef = useRef(null);
 
   return (
     <main className={styles.main}>
@@ -30,9 +33,20 @@ const Page = () => {
         playerMode={playerMode}
         setPlayerMode={setPlayerMode}
         setPhoto={setPhoto}
+        setCameraOn={setCameraOn}
+        setStream={setStream}
+        videoRef={videoRef}
+      />}
+      {cameraOn && <Camera
+        videoRef={videoRef}
+        setPhoto={setPhoto}
+        setPlayerMode={setPlayerMode}
+        setCameraOn={setCameraOn}
+        stream={stream}
       />}
       {photo && !isLoadingResult && <Photo
         setPlayerMode={setPlayerMode}
+        photo={photo}
         setPhoto={setPhoto}
         setIsLoadingResult={setIsLoadingResult}
         selectedTemplate={selectedTemplate}

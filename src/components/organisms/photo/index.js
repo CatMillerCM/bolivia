@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import { Buttons } from '@/components/molecules/buttons';
 import styles from './photo.module.css';
 
-const Photo = ({ setPlayerMode, setPhoto, setIsLoadingResult, selectedTemplate, setResultImage }) => {
+const Photo = ({ setPlayerMode, photo, setPhoto, setIsLoadingResult, selectedTemplate, setResultImage }) => {
   const handleCameraOpen = () => {
     console.log('open camera');
     // take photo here
@@ -23,6 +24,7 @@ const Photo = ({ setPlayerMode, setPhoto, setIsLoadingResult, selectedTemplate, 
   return (
     <div className={styles.photoPage}>
     <p>Here is the photo</p>
+    <Image className={styles.photo} src={photo} alt="photo" fill/>
     <Buttons
       firstOnClick={handleUsePhoto}
       secondOnClick={handleCameraOpen}
@@ -35,6 +37,7 @@ const Photo = ({ setPlayerMode, setPhoto, setIsLoadingResult, selectedTemplate, 
 
 Photo.propTypes = {
   setPlayerMode: PropTypes.func.isRequired,
+  photo: PropTypes.string.isRequired,
   setPhoto: PropTypes.func.isRequired,
   setIsLoadingResult: PropTypes.func.isRequired,
   selectedTemplate: PropTypes.string.isRequired,

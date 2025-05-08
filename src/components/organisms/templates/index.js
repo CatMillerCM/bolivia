@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { Button } from '@/components/atoms/button';
 import { photoTemplates } from '@/data';
+import { PhotoButton } from '@/components/atoms/photo-button';
 import styles from './templates.module.css';
 
-const Templates = ({ selectedTemplate, setSelectedTemplate, playerMode, setPlayerMode, setPhoto }) => {
+const Templates = ({ selectedTemplate, setSelectedTemplate, playerMode, setPlayerMode, setCameraOn, setStream, videoRef }) => {
   const handleTemplateSelect = (e) => {
     setSelectedTemplate(e.target.alt);
   };
@@ -12,13 +12,6 @@ const Templates = ({ selectedTemplate, setSelectedTemplate, playerMode, setPlaye
   const handleClose = () => {
     setSelectedTemplate(null);
   }
-
-  const handleCameraOpen = () => {
-    console.log('open camera');
-    // take photo here
-    setPlayerMode(null);
-    setPhoto('here is the photo');
-  };
 
   // to do - disable camera open button untl template chosen
   return (
@@ -36,7 +29,12 @@ const Templates = ({ selectedTemplate, setSelectedTemplate, playerMode, setPlaye
     </div>
     <p>Time to take your photo for {selectedTemplate}</p>
     <p>Ensure you keep your face in the shown outline and strike your best SCARED face!</p>
-    <Button onClick={handleCameraOpen} label="Take Photo"/>
+    <PhotoButton
+      setPlayerMode={setPlayerMode}
+      setCameraOn={setCameraOn}
+      setStream={setStream}
+      videoRef={videoRef}
+    />
   </div>
   )
 };
@@ -46,7 +44,9 @@ Templates.propTypes = {
   setSelectedTemplate: PropTypes.func.isRequired,
   playerMode: PropTypes.string.isRequired,
   setPlayerMode: PropTypes.func.isRequired,
-  setPhoto: PropTypes.func.isRequired
+  setPhoto: PropTypes.func.isRequired,
+  setCameraOn: PropTypes.func.isRequired,
+  videoRef: PropTypes.object.isRequired
 };
 
 export { Templates };
