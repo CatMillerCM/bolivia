@@ -35,8 +35,9 @@ const Camera = ({ videoRef, setPhoto, setPlayerMode, setCameraOn, stream }) => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <video className={styles.stream} ref={videoRef} autoPlay playsInline />
+      <div className={styles.faceOverlay}></div>
       <Button onClick={handleCapture} label="Capture Photo" />
       <canvas className={styles.canvas} ref={canvasRef} />
     </div>
