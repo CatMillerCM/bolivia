@@ -17,19 +17,19 @@ const Photo = ({ setPlayerMode, photo, setPhoto, setIsLoadingResult, selectedTem
 
   return (
     <div className={styles.photoPage}>
-    <p>Here is the photo</p>
-    <Image className={styles.photo} src={photo} alt="photo" fill/>
-    <div className={styles.buttons}>
-      <Button onClick={handleUsePhoto} label="I'm happy with it!" />
-      <PhotoButton
-        setPlayerMode={setPlayerMode}
-        setCameraOn={setCameraOn}
-        setStream={setStream}
-        videoRef={videoRef}
-        label="Retake Photo"
-      />
+      <p>Here is the photo</p>
+      <Image className={styles.photo} src={photo} alt="photo" fill/>
+      <div className={styles.buttons}>
+        <Button onClick={handleUsePhoto} label="I'm happy with it!" />
+        <PhotoButton
+          setPlayerMode={setPlayerMode}
+          setCameraOn={setCameraOn}
+          setStream={setStream}
+          videoRef={videoRef}
+          label="Retake Photo"
+        />
+      </div>
     </div>
-  </div>
   )
 };
 

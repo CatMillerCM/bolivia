@@ -1,0 +1,24 @@
+.container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  width: 200%;
+  animation: move 20s linear infinite;
+}
+
+.carousel img {
+  width: 5rem;
+  height: 5rem;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
