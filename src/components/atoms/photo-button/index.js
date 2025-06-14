@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import { Button } from '../button';
 
-const PhotoButton = ({ setPlayerMode, setCameraOn, setStream, videoRef, label, selectedTemplate }) => {
+const PhotoButton = ({ setCameraOn, setStream, videoRef, label, selectedTemplate }) => {
   const handleCameraOpen = async () => {
-    setPlayerMode(false);
     setCameraOn(true);
 
     try {
@@ -27,7 +26,6 @@ const PhotoButton = ({ setPlayerMode, setCameraOn, setStream, videoRef, label, s
 };
 
 PhotoButton.propTypes = {
-  setPlayerMode: PropTypes.func.isRequired,
   setCameraOn: PropTypes.func.isRequired,
   setStream: PropTypes.func.isRequired,
   videoRef: PropTypes.object.isRequired,

@@ -10,7 +10,6 @@ import styles from './page.module.css';
 
 const Page = () => {
   const [entry, setEntry] = useState(true);
-  const [playerMode, setPlayerMode] = useState(null);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
   const [cameraOn, setCameraOn] = useState(false);
   const [stream, setStream] = useState(false);
@@ -25,13 +24,10 @@ const Page = () => {
       <div className={styles.content}>
       {entry && <Entry
         setEntry={setEntry}
-        setPlayerMode={setPlayerMode}
       />}
-      {playerMode && <Templates
+      {!entry && !cameraOn && !photo && !resultImage && <Templates
         selectedTemplate={selectedTemplate}
         setSelectedTemplate={setSelectedTemplate}
-        playerMode={playerMode}
-        setPlayerMode={setPlayerMode}
         setPhoto={setPhoto}
         setCameraOn={setCameraOn}
         setStream={setStream}
@@ -40,12 +36,10 @@ const Page = () => {
       {cameraOn && <Camera
         videoRef={videoRef}
         setPhoto={setPhoto}
-        setPlayerMode={setPlayerMode}
         setCameraOn={setCameraOn}
         stream={stream}
       />}
-      {photo && !cameraOn && !isLoadingResult && !resultImage && <Photo
-        setPlayerMode={setPlayerMode}
+      {photo && !cameraOn && !resultImage && <Photo
         photo={photo}
         setPhoto={setPhoto}
         setIsLoadingResult={setIsLoadingResult}
@@ -55,11 +49,6 @@ const Page = () => {
         setStream={setStream}
         videoRef={videoRef}
       />}
-      {/* {isLoadingResult && (
-        <div className={styles.loading}>
-          <p>Loading....</p>
-        </div>
-      )} */}
       {resultImage && <Result
         resultImage={resultImage}
         setResultImage={setResultImage}

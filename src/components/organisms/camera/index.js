@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { Button } from '@/components/atoms/button';
 import styles from './camera.module.css';
 
-const Camera = ({ videoRef, setPhoto, setPlayerMode, setCameraOn, stream }) => {
+const Camera = ({ videoRef, setPhoto, setCameraOn, stream }) => {
   const canvasRef = useRef(null);
 
   const handleCapture = () => {
@@ -30,7 +30,6 @@ const Camera = ({ videoRef, setPhoto, setPlayerMode, setCameraOn, stream }) => {
       }
 
       setCameraOn(false);
-      setPlayerMode(null);
     }
   };
 
@@ -47,7 +46,6 @@ const Camera = ({ videoRef, setPhoto, setPlayerMode, setCameraOn, stream }) => {
 Camera.propTypes = {
   videoRef: PropTypes.object.isRequired,
   setPhoto: PropTypes.func.isRequired,
-  setPlayerMode: PropTypes.func.isRequired,
   setCameraOn: PropTypes.func.isRequired,
   stream: PropTypes.instanceOf(MediaStream)
 };

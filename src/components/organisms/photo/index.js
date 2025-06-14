@@ -5,7 +5,7 @@ import { Button } from '@/components/atoms/button';
 import { PhotoButton } from '@/components/atoms/photo-button';
 import styles from './photo.module.css';
 
-const Photo = ({ setPlayerMode, template, photo, setResultImage, setCameraOn, setStream, videoRef }) => {
+const Photo = ({ template, photo, setResultImage, setCameraOn, setStream, videoRef }) => {
   const createCanvas = () => {
     const canvas = document.createElement('canvas');
     canvas.width = 1080;
@@ -49,7 +49,6 @@ const Photo = ({ setPlayerMode, template, photo, setResultImage, setCameraOn, se
       <div className={styles.buttons}>
         <Button onClick={createCanvas} label="I'm happy with it!" />
         <PhotoButton
-          setPlayerMode={setPlayerMode}
           setCameraOn={setCameraOn}
           setStream={setStream}
           videoRef={videoRef}
@@ -61,7 +60,6 @@ const Photo = ({ setPlayerMode, template, photo, setResultImage, setCameraOn, se
 };
 
 Photo.propTypes = {
-  setPlayerMode: PropTypes.func.isRequired,
   photo: PropTypes.string.isRequired,
   setPhoto: PropTypes.func.isRequired,
   setIsLoadingResult: PropTypes.func.isRequired,
