@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { photoExample } from '@/assets';
-import styles from './result.module.css';
 import { Buttons } from '@/components/molecules/buttons';
+import styles from './result.module.css';
 
-const Result = ({ setResultImage, setEntry }) => {
+const Result = ({ resultImage, setResultImage, setEntry }) => {
   const handleShareImage = () => {
     // handle share
   };
@@ -16,7 +15,7 @@ const Result = ({ setResultImage, setEntry }) => {
   
   return (
     <div className={styles.resultPage}>
-      <Image className={styles.resultPhoto} src={photoExample} alt="photo"/>
+      <Image className={styles.resultImage} src={resultImage} alt="result image" fill/>
       <Buttons
         firstOnClick={handleShareImage}
         secondOnClick={handleStartAgain}
@@ -28,6 +27,7 @@ const Result = ({ setResultImage, setEntry }) => {
 };
 
 Result.propTypes = {
+  photo: PropTypes.string.isRequired,
   setResultImage: PropTypes.func.isRequired,
   setEntry: PropTypes.func.isRequired
 };

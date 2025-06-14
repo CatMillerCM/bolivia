@@ -44,7 +44,7 @@ const Page = () => {
         setCameraOn={setCameraOn}
         stream={stream}
       />}
-      {photo && !cameraOn && !isLoadingResult && <Photo
+      {photo && !cameraOn && !isLoadingResult && !resultImage && <Photo
         setPlayerMode={setPlayerMode}
         photo={photo}
         setPhoto={setPhoto}
@@ -55,12 +55,13 @@ const Page = () => {
         setStream={setStream}
         videoRef={videoRef}
       />}
-      {isLoadingResult && (
+      {/* {isLoadingResult && (
         <div className={styles.loading}>
           <p>Loading....</p>
         </div>
-      )}
+      )} */}
       {resultImage && <Result
+        resultImage={resultImage}
         setResultImage={setResultImage}
         setEntry={setEntry}
       />}
