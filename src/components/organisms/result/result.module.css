@@ -2,8 +2,7 @@
   width: 100%;
 }
 
-
-.resultPhoto {
-  width: 5rem;
-  height: auto;
+.resultImage {
+  position: relative !important;
+  margin-bottom: 1rem;
 }

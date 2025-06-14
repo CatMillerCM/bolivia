@@ -5,6 +5,13 @@
 .photo {
   position: relative !important;
   margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  clip-path: ellipse(46% 45% at 50% 50%);
+  -webkit-clip-path: ellipse(46% 45% at 50% 50%);
 }
 
 .buttons {
