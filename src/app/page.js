@@ -14,7 +14,7 @@ const Page = () => {
   const [cameraOn, setCameraOn] = useState(false);
   const [stream, setStream] = useState(false);
   const [photo, setPhoto] = useState(null);
-  const [resultImage, setResultImage] = useState(null);
+  const [resultCanvas, setResultCanvas] = useState(null);
 
   const videoRef = useRef(null);
 
@@ -24,7 +24,7 @@ const Page = () => {
       {entry && <Entry
         setEntry={setEntry}
       />}
-      {!entry && !cameraOn && !photo && !resultImage && <Templates
+      {!entry && !cameraOn && !photo && !resultCanvas && <Templates
         selectedTemplate={selectedTemplate}
         setSelectedTemplate={setSelectedTemplate}
         setPhoto={setPhoto}
@@ -38,18 +38,18 @@ const Page = () => {
         setCameraOn={setCameraOn}
         stream={stream}
       />}
-      {photo && !cameraOn && !resultImage && <Photo
+      {photo && !cameraOn && !resultCanvas && <Photo
         photo={photo}
         setPhoto={setPhoto}
         selectedTemplate={selectedTemplate}
-        setResultImage={setResultImage}
+        setResultCanvas={setResultCanvas}
         setCameraOn={setCameraOn}
         setStream={setStream}
         videoRef={videoRef}
       />}
-      {resultImage && <Result
-        resultImage={resultImage}
-        setResultImage={setResultImage}
+      {resultCanvas && <Result
+        resultCanvas={resultCanvas}
+        setResultCanvas={setResultCanvas}
         setPhoto={setPhoto}
         setSelectedTemplate={setSelectedTemplate}
       />}

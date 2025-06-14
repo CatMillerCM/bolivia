@@ -3,20 +3,27 @@ import Image from 'next/image';
 import { Buttons } from '@/components/molecules/buttons';
 import styles from './result.module.css';
 
-const Result = ({ resultImage, setResultImage, setPhoto, setSelectedTemplate }) => {
+const Result = ({ resultCanvas, setResultCanvas, setPhoto, setSelectedTemplate }) => {
   const handleShareImage = () => {
-    // handle share
+    resultCanvas.toBlob(async (blob) => {
+      if (blob && navigator.canShare) {
+        const file = new File([blob], 'Uyuni Salt Flats Perspective Photo.png', { type: 'image/png' });
+        await navigator.share({ files: [file] });
+      } else {
+        alert('Your browser does not support sharing images.');
+      }
+    }, 'image/png');
   };
 
   const handleStartAgain = () => {
-    setResultImage(null);
+    setResultCanvas(null);
     setPhoto('');
     setSelectedTemplate(null);
   };
   
   return (
     <div className={styles.resultPage}>
-      <Image className={styles.resultImage} src={resultImage} alt="result image" fill/>
+      <Image className={styles.resultCanvas} src={resultCanvas.toDataURL('image/png')} alt="result image" fill/>
       <Buttons
         firstOnClick={handleShareImage}
         secondOnClick={handleStartAgain}
@@ -29,7 +36,7 @@ const Result = ({ resultImage, setResultImage, setPhoto, setSelectedTemplate }) 
 
 Result.propTypes = {
   photo: PropTypes.string.isRequired,
-  setResultImage: PropTypes.func.isRequired,
+  setResultCanvas: PropTypes.func.isRequired,
   setPhoto: PropTypes.func.isRequired,
   setSelectedTemplate: PropTypes.func.isRequired
 };

@@ -5,7 +5,7 @@ import { Button } from '@/components/atoms/button';
 import { PhotoButton } from '@/components/atoms/photo-button';
 import styles from './photo.module.css';
 
-const Photo = ({ template, photo, setResultImage, setCameraOn, setStream, videoRef }) => {
+const Photo = ({ template, photo, setResultCanvas, setCameraOn, setStream, videoRef }) => {
   const createCanvas = () => {
     const canvas = document.createElement('canvas');
     canvas.width = 1080;
@@ -36,8 +36,7 @@ const Photo = ({ template, photo, setResultImage, setCameraOn, setStream, videoR
         ctx.drawImage(faceImage, x, y, width, height);
         ctx.restore();
   
-        const resultImage = canvas.toDataURL('image/png');
-        setResultImage(resultImage);
+        setResultCanvas(canvas);
       };
     };
   };
@@ -63,7 +62,7 @@ Photo.propTypes = {
   photo: PropTypes.string.isRequired,
   setPhoto: PropTypes.func.isRequired,
   selectedTemplate: PropTypes.string.isRequired,
-  setResultImage: PropTypes.func.isRequired,
+  setResultCanvas: PropTypes.func.isRequired,
   setCameraOn: PropTypes.func.isRequired,
   setStream: PropTypes.func.isRequired,
   videoRef: PropTypes.object.isRequired
