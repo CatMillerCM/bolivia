@@ -14,7 +14,6 @@ const Page = () => {
   const [cameraOn, setCameraOn] = useState(false);
   const [stream, setStream] = useState(false);
   const [photo, setPhoto] = useState(null);
-  const [isLoadingResult, setIsLoadingResult] = useState(false);
   const [resultImage, setResultImage] = useState(null);
 
   const videoRef = useRef(null);
@@ -42,7 +41,6 @@ const Page = () => {
       {photo && !cameraOn && !resultImage && <Photo
         photo={photo}
         setPhoto={setPhoto}
-        setIsLoadingResult={setIsLoadingResult}
         selectedTemplate={selectedTemplate}
         setResultImage={setResultImage}
         setCameraOn={setCameraOn}
@@ -52,7 +50,8 @@ const Page = () => {
       {resultImage && <Result
         resultImage={resultImage}
         setResultImage={setResultImage}
-        setEntry={setEntry}
+        setPhoto={setPhoto}
+        setSelectedTemplate={setSelectedTemplate}
       />}
       </div>
     </main>

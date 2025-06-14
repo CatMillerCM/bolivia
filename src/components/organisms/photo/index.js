@@ -62,7 +62,6 @@ const Photo = ({ template, photo, setResultImage, setCameraOn, setStream, videoR
 Photo.propTypes = {
   photo: PropTypes.string.isRequired,
   setPhoto: PropTypes.func.isRequired,
-  setIsLoadingResult: PropTypes.func.isRequired,
   selectedTemplate: PropTypes.string.isRequired,
   setResultImage: PropTypes.func.isRequired,
   setCameraOn: PropTypes.func.isRequired,

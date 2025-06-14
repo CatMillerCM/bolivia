@@ -3,14 +3,15 @@ import Image from 'next/image';
 import { Buttons } from '@/components/molecules/buttons';
 import styles from './result.module.css';
 
-const Result = ({ resultImage, setResultImage, setEntry }) => {
+const Result = ({ resultImage, setResultImage, setPhoto, setSelectedTemplate }) => {
   const handleShareImage = () => {
     // handle share
   };
 
   const handleStartAgain = () => {
     setResultImage(null);
-    setEntry(true);
+    setPhoto('');
+    setSelectedTemplate(null);
   };
   
   return (
@@ -29,7 +30,8 @@ const Result = ({ resultImage, setResultImage, setEntry }) => {
 Result.propTypes = {
   photo: PropTypes.string.isRequired,
   setResultImage: PropTypes.func.isRequired,
-  setEntry: PropTypes.func.isRequired
+  setPhoto: PropTypes.func.isRequired,
+  setSelectedTemplate: PropTypes.func.isRequired
 };
 
 export { Result };
