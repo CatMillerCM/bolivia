@@ -1,11 +1,18 @@
 import PropTypes from 'prop-types';
 import NextImage from 'next/image';
-// import { photoExample } from '@/assets';
 import { Button } from '@/components/atoms/button';
 import { PhotoButton } from '@/components/atoms/photo-button';
+import { photoTemplates } from '@/data';
 import styles from './photo.module.css';
 
-const Photo = ({ template, photo, setResultCanvas, setCameraOn, setStream, videoRef }) => {
+const Photo = ({ selectedTemplate, photo, setResultCanvas, setCameraOn, setStream, videoRef }) => {
+  // utils?
+  const getPositioning = (selectedTemplate) => {
+    const templateData = photoTemplates.find((template) => template.caption === selectedTemplate);
+
+    return templateData.positioning;
+  };
+
   const createCanvas = () => {
     const canvas = document.createElement('canvas');
     canvas.width = 1080;
@@ -13,7 +20,7 @@ const Photo = ({ template, photo, setResultCanvas, setCameraOn, setStream, video
     const ctx = canvas.getContext('2d');
   
     const templateImage = new Image();
-    templateImage.src = '/templates/bolivia.jpg';
+    templateImage.src = `/templates/${selectedTemplate.toLowerCase().replace(/\s+/g, '-')}.webp`;
   
     const faceImage = new Image();
     faceImage.src = photo;
@@ -22,10 +29,11 @@ const Photo = ({ template, photo, setResultCanvas, setCameraOn, setStream, video
       templateImage.onload = () => {
         ctx.drawImage(templateImage, 0, 0, canvas.width, canvas.height);
 
-        const x = 400;
-        const y = 300;
-        const width = 280;
-        const height = 350;
+        const positioning = getPositioning(selectedTemplate);
+        const x = positioning.x;
+        const y = positioning.y;
+        const width = positioning.width;
+        const height = positioning.height;
   
         ctx.save();
   
