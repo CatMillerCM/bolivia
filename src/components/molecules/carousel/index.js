@@ -6,8 +6,8 @@ const Carousel = () => {
   return (
     <div className={styles.container}>
       <div className={styles.carousel}>
-        {saltFlatsImages.map((i) => (
-          <Image key={i.alt} src={i.image} alt={i.alt} />
+        {[...saltFlatsImages, ...saltFlatsImages].map((i, index) => (
+          <Image key={index} src={i.image} alt={i.alt} width={80} height={80} />
         ))}
       </div>
     </div>

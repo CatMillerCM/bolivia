@@ -5,13 +5,15 @@
 
 .carousel {
   display: flex;
-  width: 200%;
+  width: max-content;
   animation: move 20s linear infinite;
+  gap: 0.25rem;
 }
 
 .carousel img {
   width: 5rem;
   height: 5rem;
+  object-fit: cover;
 }
 
 @keyframes move {
