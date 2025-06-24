@@ -10,10 +10,9 @@ const Entry = ({ setEntry }) => {
 
   return (
     <div className={styles.entry}>
-      <h1>Salt Flats Photo Generator</h1>
+      <h1>salt.flat() snaps</h1>
       <p>A lil spiel about the salt flats and what the generator is and does and how it works and some fun images below maybe and some more words and words and words and words and words and words and words and words.</p>
       <Carousel />
-      <p>Maybe some instruction for buttons</p>
       <Button
         onClick={handleStart}
         label="Start"
