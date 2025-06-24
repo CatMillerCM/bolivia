@@ -1,4 +1,4 @@
-import beerBottleBalance from '../../public/templates/beer-bottle-balance.webp';
+import bottleBalance from '../../public/templates/bottle-balance.webp';
 import bigFoot from '../../public/templates/big-foot.webp';
 import hatTrick from '../../public/templates/hat-trick.webp';
 import pringlesPose from '../../public/templates/pringles-pose.webp';
@@ -27,8 +27,8 @@ const photoTemplates = [
     positioning: { x: 430, y: 580, width: 50, height: 65 }
   },
   {
-    photo: beerBottleBalance,
-    caption: 'Beer Bottle Balance',
+    photo: bottleBalance,
+    caption: 'Bottle Balance',
     positioning: { x: 500, y: 20, width: 60, height: 75 }
   },
   {

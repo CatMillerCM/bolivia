@@ -1,0 +1,25 @@
+.templateGrid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.image {
+  width: 8rem;
+}
+
+.image img {
+  width: 8rem;
+  height: 8rem;
+}
+
+.caption {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.chosen {
+  outline: solid 4px white;
+}

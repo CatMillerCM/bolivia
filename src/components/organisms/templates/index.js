@@ -1,25 +1,54 @@
+'use client';
+
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import Image from 'next/image';
 import { PhotoButton } from '@/components/atoms/photo-button';
-import { SlideSelector } from '@/components/molecules/slide-selector';
+import { TemplateGrid } from '@/components/molecules/template-grid';
+import { photoTemplates } from '@/data';
+import { Button } from '@/components/atoms/button';
 import styles from './templates.module.css';
 
 const Templates = ({ selectedTemplate, setSelectedTemplate, setCameraOn, setStream, videoRef }) => {
+  const [continuing, setContinuing] = useState(false);
   // to do - disable camera open button untl template chosen
+
+  // to do - utils
+  const getTemplatePhoto = (selectedTemplate) => {
+    console.log(selectedTemplate)
+    const templateData = photoTemplates.find((template) => template.caption === selectedTemplate);
+    console.log(templateData)
+    return templateData.photo;
+  };
+
   return (
     <div className={styles.templates}>
-      <p>Choose your perspective photo template:</p>
-      <SlideSelector 
-        selectedTemplate={selectedTemplate}
-        setSelectedTemplate={setSelectedTemplate}
-      />
-      <p>Time to take your photo for {selectedTemplate}</p>
-      <p>Ensure you keep your face in the shown outline and strike your best SCARED face!</p>
-      <PhotoButton
-        setCameraOn={setCameraOn}
-        setStream={setStream}
-        videoRef={videoRef}
-        selectedTemplate={selectedTemplate}
-      />
+      {!continuing ?
+        (
+          <>
+            <p>Choose your perspective photo template:</p>
+            <TemplateGrid 
+              selectedTemplate={selectedTemplate}
+              setSelectedTemplate={setSelectedTemplate}
+            />
+            <Button onClick={() => setContinuing(true)} label="Continue"/>
+          </>
+        ) :
+        (
+          <>
+            <p>Time to take your photo for:</p>
+            <p className={styles.templateName}>{selectedTemplate}</p>
+            <Image src={getTemplatePhoto(selectedTemplate)} alt={selectedTemplate}/>
+            <p>Ensure you keep your face in the shown outline and give us a good expression!</p>
+            <PhotoButton
+              setCameraOn={setCameraOn}
+              setStream={setStream}
+              videoRef={videoRef}
+              selectedTemplate={selectedTemplate}
+            />
+          </>
+        )
+      }
     </div>
   )
 };

@@ -30,15 +30,23 @@ const Photo = ({ selectedTemplate, photo, setResultCanvas, setCameraOn, setStrea
         ctx.drawImage(templateImage, 0, 0, canvas.width, canvas.height);
 
         const positioning = getPositioning(selectedTemplate);
-        const x = positioning.x;
-        const y = positioning.y;
-        const width = positioning.width;
-        const height = positioning.height;
+        // const x = positioning.x;
+        // const y = positioning.y;
+        // const width = positioning.width;
+        // const height = positioning.height;
+// 530 200 50 65
+        const x = 530;
+        const y = 200;
+        const width = 50;
+        const height = 65;
+
+        console.log(x, y, width, height)
   
         ctx.save();
   
         ctx.beginPath();
-        ctx.ellipse(x + width / 2, y + height / 2, width / 2, height / 2, 0, 0, Math.PI * 2);
+        // ctx.ellipse(x + width / 2, y + height / 2, width / 2, height / 2, 0, 0, Math.PI * 2);
+        ctx.ellipse(x + width / 2, y + height / 2, width * 0.46, height * 0.45, 0, 0, Math.PI * 2);
         ctx.clip();
   
         ctx.drawImage(faceImage, x, y, width, height);
