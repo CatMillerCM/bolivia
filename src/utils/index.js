@@ -38,7 +38,7 @@ const createCanvas = (selectedTemplate, photo, setResultCanvas) => {
       faceCtx.translate(x + width / 2, y + height / 2);
       faceCtx.rotate(rotation * Math.PI / 180);
       faceCtx.beginPath();
-      faceCtx.ellipse(0, 0, width * 0.17, height * 0.22, 0, 0, Math.PI * 2);
+      faceCtx.ellipse(0, 0, width * 0.25, height * 0.3, 0, 0, Math.PI * 2);
       faceCtx.clip();
       faceCtx.filter = 'blur(0.7px)';
       faceCtx.drawImage(faceImage, -width / 2, -height / 2, width, height);
@@ -53,8 +53,8 @@ const createCanvas = (selectedTemplate, photo, setResultCanvas) => {
       maskCtx.translate(x + width / 2, y + height / 2);
       maskCtx.rotate(rotation * Math.PI / 180);
 
-      const radiusX = width * 0.22;
-      const radiusY = height * 0.27;
+      const radiusX = width * 0.25;
+      const radiusY = height * 0.35;
       maskCtx.scale(radiusX, radiusY);
 
       const gradient = maskCtx.createRadialGradient(0, 0, 0.45, 0, 0, 1);
