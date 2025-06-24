@@ -5,19 +5,12 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { PhotoButton } from '@/components/atoms/photo-button';
 import { TemplateGrid } from '@/components/molecules/template-grid';
-import { photoTemplates } from '@/data';
 import { Button } from '@/components/atoms/button';
+import { getTemplateData } from '@/utils';
 import styles from './templates.module.css';
 
 const Templates = ({ selectedTemplate, setSelectedTemplate, setCameraOn, setStream, videoRef }) => {
   const [continuing, setContinuing] = useState(false);
-  // to do - utils
-  const getTemplatePhoto = (selectedTemplate) => {
-    console.log(selectedTemplate)
-    const templateData = photoTemplates.find((template) => template.caption === selectedTemplate);
-    console.log(templateData)
-    return templateData.photo;
-  };
 
   return (
     <div className={styles.templates}>
@@ -36,7 +29,7 @@ const Templates = ({ selectedTemplate, setSelectedTemplate, setCameraOn, setStre
           <>
             <p>Time to take your photo for:</p>
             <p className={styles.templateName}>{selectedTemplate}</p>
-            <Image src={getTemplatePhoto(selectedTemplate)} alt={selectedTemplate}/>
+            <Image src={getTemplateData(selectedTemplate, 'photo')} alt={selectedTemplate}/>
             <p>Ensure you keep your face in the shown outline, have good lighting and give us a good expression!</p>
             <PhotoButton
               setCameraOn={setCameraOn}

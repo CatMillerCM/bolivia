@@ -2,17 +2,10 @@ import PropTypes from 'prop-types';
 import NextImage from 'next/image';
 import { Button } from '@/components/atoms/button';
 import { PhotoButton } from '@/components/atoms/photo-button';
-import { photoTemplates } from '@/data';
+import { getTemplateData } from '@/utils';
 import styles from './photo.module.css';
 
 const Photo = ({ selectedTemplate, photo, setResultCanvas, setCameraOn, setStream, videoRef }) => {
-  // utils?
-  const getPositioning = (selectedTemplate) => {
-    const templateData = photoTemplates.find((template) => template.caption === selectedTemplate);
-
-    return templateData.positioning;
-  };
-
   const createCanvas = () => {
     const canvas = document.createElement('canvas');
     canvas.width = 1080;
@@ -29,7 +22,7 @@ const Photo = ({ selectedTemplate, photo, setResultCanvas, setCameraOn, setStrea
       templateImage.onload = () => {
         ctx.drawImage(templateImage, 0, 0, canvas.width, canvas.height);
 
-        const positioning = getPositioning(selectedTemplate);
+        const positioning = getTemplateData(selectedTemplate, 'positioning');
         const x = positioning.x;
         const y = positioning.y;
         const width = positioning.width;
