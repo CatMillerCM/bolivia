@@ -9,32 +9,32 @@ const photoTemplates = [
   {
     photo: spoonScoop,
     caption: 'Spoon Scoop',
-    positioning: { x: 840, y: 300, width: 40, height: 50 }
+    positioning: { x: 808, y: 265, width: 100, height: 100, rotation: 0 }
   },
   {
     photo: bigFoot,
     caption: 'Big Foot',
-    positioning: { x: 530, y: 200, width: 50, height: 65 }
+    positioning: { x: 480, y: 150, width: 140, height: 140, rotation: 0 }
   },
   {
     photo: pringlesPose,
     caption: 'Pringles Pose',
-    positioning: { x: 510, y: 170, width: 50, height: 65 }
+    positioning: { x: 470, y: 113, width: 135, height: 135, rotation: 0 }
   },
   {
     photo: stompScare,
     caption: 'Stomp Scare',
-    positioning: { x: 430, y: 580, width: 50, height: 65 }
+    positioning: { x: 385, y: 547, width: 170, height: 170, rotation: -40 }
   },
   {
     photo: bottleBalance,
     caption: 'Bottle Balance',
-    positioning: { x: 500, y: 20, width: 60, height: 75 }
+    positioning: { x: 457, y: -20, width: 160, height: 160, rotation: 0 }
   },
   {
     photo: hatTrick,
     caption: 'Hat-trick',
-    positioning: { x: 600, y: 300, width: 50, height: 65 }
+    positioning: { x: 592, y: 288, width: 102, height: 102, rotation: 10 }
   }
 ];
 

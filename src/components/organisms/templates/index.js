@@ -11,8 +11,6 @@ import styles from './templates.module.css';
 
 const Templates = ({ selectedTemplate, setSelectedTemplate, setCameraOn, setStream, videoRef }) => {
   const [continuing, setContinuing] = useState(false);
-  // to do - disable camera open button untl template chosen
-
   // to do - utils
   const getTemplatePhoto = (selectedTemplate) => {
     console.log(selectedTemplate)
@@ -39,7 +37,7 @@ const Templates = ({ selectedTemplate, setSelectedTemplate, setCameraOn, setStre
             <p>Time to take your photo for:</p>
             <p className={styles.templateName}>{selectedTemplate}</p>
             <Image src={getTemplatePhoto(selectedTemplate)} alt={selectedTemplate}/>
-            <p>Ensure you keep your face in the shown outline and give us a good expression!</p>
+            <p>Ensure you keep your face in the shown outline, have good lighting and give us a good expression!</p>
             <PhotoButton
               setCameraOn={setCameraOn}
               setStream={setStream}

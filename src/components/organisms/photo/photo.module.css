@@ -13,8 +13,8 @@
   aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
-  clip-path: ellipse(30% 28% at 50% 50%);
-  -webkit-clip-path: ellipse(30% 28% at 50% 50%);
+  clip-path: ellipse(27% 25% at 50% 50%);
+  -webkit-clip-path: ellipse(27% 25% at 50% 50%);
 }
 
 .buttons {
