@@ -1,4 +1,6 @@
 import { Quicksand } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import "./globals.css";
 
 const quicksand = Quicksand({
@@ -20,6 +22,7 @@ export default function RootLayout({ children }) {
       <body className={quicksand.className}>
         {children}
       </body>
+      <GoogleAnalytics gaId="G-84SD328Z6J" />
     </html>
   );
 };
