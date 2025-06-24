@@ -30,7 +30,7 @@ const Templates = ({ selectedTemplate, setSelectedTemplate, setCameraOn, setStre
             <p>Time to take your photo for:</p>
             <p className={styles.templateName}>{selectedTemplate}</p>
             <Image src={getTemplateData(selectedTemplate, 'photo')} alt={selectedTemplate}/>
-            <p>Ensure you keep your face in the shown outline, have good lighting and give us a good expression!</p>
+            <p>Ensure you keep your face in the shown outline and have good lighting!</p>
             <PhotoButton
               setCameraOn={setCameraOn}
               setStream={setStream}

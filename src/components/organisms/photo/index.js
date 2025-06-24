@@ -52,7 +52,7 @@ const Photo = ({ selectedTemplate, photo, setResultCanvas, setCameraOn, setStrea
       <p className={styles.text}>Here is the photo:</p>
       <NextImage className={styles.photo} src={photo} alt="photo" fill/>
       <div className={styles.buttons}>
-        <Button onClick={createCanvas} label="I'm happy with it!" />
+        <Button onClick={createCanvas} label="I'm Happy With It" />
         <PhotoButton
           setCameraOn={setCameraOn}
           setStream={setStream}

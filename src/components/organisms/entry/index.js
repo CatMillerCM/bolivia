@@ -11,7 +11,8 @@ const Entry = ({ setEntry }) => {
   return (
     <div className={styles.entry}>
       <h1>salt.flat() snaps</h1>
-      <p>A lil spiel about the salt flats and what the generator is and does and how it works and some fun images below maybe and some more words and words and words and words and words and words and words and words.</p>
+      <p>Salar de Uyuni, located in Bolivia, are the world's largest salt flats at almost 11,000 kilometres squared, and are a popular tourist destination for those seeking unique landscapes and a fun experience. The seemingly never-ending plains of white salt provide the perfect setting for the famous perspective photos that so many enjoy taking.</p>
+      <p>Using this app, you too can now create one of these fun photos from home!</p>
       <Carousel />
       <Button
         onClick={handleStart}
