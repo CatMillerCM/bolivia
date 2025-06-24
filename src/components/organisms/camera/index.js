@@ -35,8 +35,10 @@ const Camera = ({ videoRef, setPhoto, setCameraOn, stream }) => {
 
   return (
     <div className={styles.container}>
-      <video className={styles.stream} ref={videoRef} autoPlay playsInline />
-      <div className={styles.faceOverlay}></div>
+      <div className={styles.videoWrapper}>
+        <video className={styles.stream} ref={videoRef} autoPlay playsInline />
+        <div className={styles.faceOverlay}></div>
+      </div>
       <Button onClick={handleCapture} label="Capture Photo" />
       <canvas className={styles.canvas} ref={canvasRef} />
     </div>

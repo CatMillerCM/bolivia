@@ -8,14 +8,13 @@
 
 .photo {
   position: relative !important;
-  margin: 0 auto;
-  width: 10rem !important;
+  margin: -4rem auto -4rem;
   height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
-  clip-path: ellipse(46% 45% at 50% 50%);
-  -webkit-clip-path: ellipse(46% 45% at 50% 50%);
+  clip-path: ellipse(30% 28% at 50% 50%);
+  -webkit-clip-path: ellipse(30% 28% at 50% 50%);
 }
 
 .buttons {

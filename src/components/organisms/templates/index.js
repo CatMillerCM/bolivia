@@ -31,7 +31,7 @@ const Templates = ({ selectedTemplate, setSelectedTemplate, setCameraOn, setStre
               selectedTemplate={selectedTemplate}
               setSelectedTemplate={setSelectedTemplate}
             />
-            <Button onClick={() => setContinuing(true)} label="Continue"/>
+            <Button onClick={() => setContinuing(true)} label="Continue" disabled={!selectedTemplate}/>
           </>
         ) :
         (
