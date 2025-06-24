@@ -49,7 +49,7 @@ Camera.propTypes = {
   videoRef: PropTypes.object.isRequired,
   setPhoto: PropTypes.func.isRequired,
   setCameraOn: PropTypes.func.isRequired,
-  stream: PropTypes.instanceOf(MediaStream)
+  stream: PropTypes.any
 };
 
 export { Camera };
