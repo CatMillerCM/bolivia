@@ -10,7 +10,7 @@ const quicksand = Quicksand({
 
 export const metadata = {
   title: "salt.flat() snaps",
-  description: "Have fun creating your own perspective photos from the famous Uyuni salt flats with this interactive app",
+  description: "Have fun creating your own perspective photos from the famous Uyuni Salt Flat with this interactive app",
   icons: {
     icon: '/favicon.ico'
   },

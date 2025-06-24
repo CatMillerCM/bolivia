@@ -7,7 +7,7 @@ const Result = ({ resultCanvas, setResultCanvas, setPhoto, setSelectedTemplate }
   const handleShareImage = () => {
     resultCanvas.toBlob(async (blob) => {
       if (blob && navigator.canShare) {
-        const file = new File([blob], 'Uyuni Salt Flats Perspective Photo.png', { type: 'image/png' });
+        const file = new File([blob], 'Uyuni Salt Flat Perspective Photo.png', { type: 'image/png' });
         await navigator.share({ files: [file] });
       } else {
         alert('Your browser does not support sharing images.');
