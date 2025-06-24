@@ -1,11 +1,11 @@
 'use client';
 
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import Image from 'next/image';
+import { useState } from 'react';
+import { Button } from '@/components/atoms/button';
 import { PhotoButton } from '@/components/atoms/photo-button';
 import { TemplateGrid } from '@/components/molecules/template-grid';
-import { Button } from '@/components/atoms/button';
 import { getTemplateData } from '@/utils';
 import styles from './templates.module.css';
 

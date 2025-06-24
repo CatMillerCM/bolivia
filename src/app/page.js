@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { Entry } from '@/components/organisms/entry';
-import { Templates } from '@/components/organisms/templates';
-import { Photo } from '@/components/organisms/photo';
-import { Result } from '@/components/organisms/result';
 import { Camera } from '@/components/organisms/camera';
+import { Entry } from '@/components/organisms/entry';
+import { Photo } from '@/components/organisms/photo';
+import { Templates } from '@/components/organisms/templates';
+import { Result } from '@/components/organisms/result';
 import styles from './page.module.css';
 
 const Page = () => {
