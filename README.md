@@ -1,68 +1,13 @@
-# Using this template
+# salt.flat() snaps
 
-## Creating repo
+Welcome to Boliva's project: salt.flat() snaps.
 
-- Clone this repo from github or local files
-- Create a new repo on github
-- Point cloned repo to new repo using: `git remote set-url origin [REPO URL]`
-- Push up changes: `git push -u origin main`
-- If the error 'fatal: the remote end hung up unexpectedly' arises, use `git config http.postBuffer 524288000` and try push again
-- Delete test files if not testing
-- Delete this part of readme
-- npm i
+After visiting the famous Salar de Uyuni and taking an abundance of classic perspective shots, I decided I wanted to bring the fun to those at home too.
 
-## Creating a new component
+salt.flat() snaps allows the user to choose a classic photo template and then opens their device's camera to capture their face. By mapping this onto the chosen template, a final, fun result is shown and can be shared around too.
 
-```
-import PropTypes from 'prop-types';
-import Image from 'next/image';
-import styles from './component.module.css';
+While it's not perfect, this app hopefully brings a bit of Bolivian fun to those around the world - and maybe even some inspiration for a real visit in the future!
 
-const Component = ({ aProp }) => {
-  return (
-    <div className={styles.image}>
-      <Image
-        src={aProp.src}
-        alt={aProp.alt}
-        layout="fill"
-        objectFit="cover"
-        unoptimized
-      />
-    </div>
-  )
-};
+Hosted independently [here](https://bolivia.cat-miller.com/).
 
-Component.propTypes = {
-  aProp: PropTypes.string.isRequired,
-};
-
-export { Component };
-```
-
-### Hosting
-
-Follow guide at https://callumeddisford.medium.com/deploying-a-next-js-14-app-to-google-cloud-run-c193895f5bd4
-
-# COUNTRY PROJECT
-
-// TO DO - update readme
-
-Welcome to [COUNTRY NAMES]'s project: [PROJECT NAME].
-
-[SPIEL]
-
-## Getting Started
-
-First, install all the dependencies using
-
-```bash
-npm i
-```
-
-Then run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A full write up, with further information about the project, can be found on [What's My Country Code - Bolivia](https://whatsmycountrycode.cat-miller.com/bolivia).
