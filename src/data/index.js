@@ -3,7 +3,6 @@ import bigFoot from '../../public/templates/big-foot.webp';
 import hatTrick from '../../public/templates/hat-trick.webp';
 import pringlesPose from '../../public/templates/pringles-pose.webp';
 import spoonScoop from '../../public/templates/spoon-scoop.webp';
-import stompScare from '../../public/templates/stomp-scare.webp';
 
 const photoTemplates = [
   {
@@ -20,11 +19,6 @@ const photoTemplates = [
     photo: pringlesPose,
     caption: 'Pringles Pose',
     positioning: { x: 480, y: 123, width: 125, height: 115, rotation: 0 }
-  },
-  {
-    photo: stompScare,
-    caption: 'Stomp Scare',
-    positioning: { x: 387, y: 550, width: 165, height: 150, rotation: -40 }
   },
   {
     photo: bottleBalance,
